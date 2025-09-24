@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --light-border: #ffffff1a;
+  --input-border: #4a85ef;
+  --input-shadow: #4a85ef4d;
+
+  --body-background: #283f97;
+  --dark-background: #121e5e;
+  --secondary-background: #111e5f;
+
+  --primary: #ff3980;
+
+  --text: #ffffff;
+  --text-gray: #7a7575;
+  --light-text: #b0bdff;
+}
+
+@theme inline {
+  --color-light-border: var(--light-border);
+  --color-input-border: var(--input-border);
+  --color-input-shadow: var(--input-shadow);
+
+  --color-body-background: var(--body-background);
+  --color-secondary-background: var(--secondary-background);
+  --color-dark-background: var(--dark-background);
+
+  --color-primary: var(--primary);
+
+  --color-text: var(--text);
+  --color-text-gray: var(--text-gray);
+  --color-light-text: var(--light-text);
+}
+
+@layer base {
+  .input-box-shadow:focus {
+    box-shadow: 0 0 0 2px var(--input-shadow);
+  }
+
+  .right-arrow-container:hover img {
+    animation: right-move 1s 1;
+  }
+
+  @keyframes right-move {
+    25% {
+      transform: translateX(8px);
+    }
+
+    50% {
+      transform: translateX(0);
+    }
+
+    75% {
+      transform: translateX(6px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-twinkle {
+    animation: twinkle 0.3s linear 2;
+  }
+
+  @keyframes twinkle {
+    from {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+body {
+  background: linear-gradient(var(--body-background), var(--dark-background));
+  min-height: 100vh;
+  overflow: hidden;
+}

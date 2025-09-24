@@ -1,0 +1,1 @@
+export { TOTAL_QUESTIONS } from "./TOTAL_QUESTIONS";
