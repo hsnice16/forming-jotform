@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 
-import { Intro, MultipleChoices, Name, SingleChoice } from "@/components";
+import {
+  Name,
+  Intro,
+  SingleChoice,
+  DropdownInput,
+  MultipleChoices,
+} from "@/components";
 import { Question } from "@/components/ui";
 import { useSharedStates } from "@/contexts";
 import { useHandleKeydown } from "@/hooks";
@@ -56,14 +62,25 @@ export default function Page() {
         </Question.Box>
       ) : null}
 
-      {prev === 2 && [now - 1, now, now + 1].includes(3) ? (
+      {[2, 4].includes(prev ?? 0) && [now - 1, now, now + 1].includes(3) && (
         <Question.Box
           inView={now === 3}
-          inViewMove={"right"}
           outView={[now - 1, now + 1].includes(3)}
+          inViewMove={prev === 4 ? "left" : "right"}
           outViewMove={now - 1 === 3 ? "left" : "right"}
         >
           <MultipleChoices />
+        </Question.Box>
+      )}
+
+      {prev === 3 && [now - 1, now, now + 1].includes(4) ? (
+        <Question.Box
+          inView={now === 4}
+          inViewMove={"right"}
+          outView={[now - 1, now + 1].includes(4)}
+          outViewMove={now - 1 === 4 ? "left" : "right"}
+        >
+          <DropdownInput />
         </Question.Box>
       ) : null}
     </main>

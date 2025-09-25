@@ -26,7 +26,7 @@ export function Question({
   return (
     <Section
       className={clsx(
-        "w-[336px] 2xs:w-[366px] xs:w-[23.75rem] sm:w-[52rem] sm:w-[52rem] bg-text gap-1",
+        "w-[336px] 2xs:w-[366px] xs:w-[23.75rem] sm:w-[42rem] lg:w-[52rem] bg-text gap-1",
         sectionClassName
       )}
     >

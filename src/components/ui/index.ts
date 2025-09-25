@@ -1,6 +1,8 @@
 export { Button } from "./Button";
 export { ButtonBox } from "./ButtonBox";
 export { Checkbox } from "./Checkbox";
+export { DropdownOption } from "./DropdownOption";
+export { DropdownOptions } from "./DropdownOptions";
 export { LeftIcon } from "./LeftIcon";
 export { Option } from "./Option";
 export { Options } from "./Options";

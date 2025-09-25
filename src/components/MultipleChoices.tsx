@@ -20,7 +20,7 @@ export function MultipleChoices() {
 
   return (
     <Question
-      showSubmitBtn
+      showNextBtn
       showPreviousBtn
       sectionClassName="mx-3"
       subSectionClassName="gap-4 sm:gap-6"

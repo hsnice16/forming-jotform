@@ -5,6 +5,9 @@
   --input-border: #4a85ef;
   --input-shadow: #4a85ef4d;
 
+  --dropdown-option-border: #f1f4f5;
+  --dropdown-selected: #499fff;
+
   --body-background: #283f97;
   --dark-background: #121e5e;
   --secondary-background: #111e5f;
@@ -23,6 +26,9 @@
   --color-light-border: var(--light-border);
   --color-input-border: var(--input-border);
   --color-input-shadow: var(--input-shadow);
+
+  --color-dropdown-option-border: var(--dropdown-option-border);
+  --color-dropdown-selected: var(--dropdown-selected);
 
   --color-body-background: var(--body-background);
   --color-secondary-background: var(--secondary-background);

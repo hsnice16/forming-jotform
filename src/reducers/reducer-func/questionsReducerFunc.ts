@@ -1,6 +1,7 @@
 import {
   SET_NAME,
   SET_SINGLE_CHOICE,
+  SET_DROPDOWN_INPUT,
   SET_MULTIPLE_CHOICES,
   REMOVE_MULTIPLE_CHOICE,
 } from "@/reducers";
@@ -16,6 +17,9 @@ export function questionsReducerFunc(
 
     case SET_SINGLE_CHOICE:
       return { ...state, singleChoice: action.payload };
+
+    case SET_DROPDOWN_INPUT:
+      return { ...state, dropdownInput: action.payload };
 
     case SET_MULTIPLE_CHOICES:
       return {

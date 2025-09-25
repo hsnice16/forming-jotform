@@ -5,6 +5,7 @@
 export type QuestionsStateType = {
   readonly name: string;
   readonly singleChoice: string;
+  readonly dropdownInput: string;
   readonly multipleChoices: string[];
 };
 
@@ -15,5 +16,6 @@ export type QuestionsStateType = {
 export type QuestionsActionsType =
   | { type: "SET_NAME"; payload: string }
   | { type: "SET_SINGLE_CHOICE"; payload: string }
+  | { type: "SET_DROPDOWN_INPUT"; payload: string }
   | { type: "SET_MULTIPLE_CHOICES"; payload: string }
   | { type: "REMOVE_MULTIPLE_CHOICE"; payload: string };

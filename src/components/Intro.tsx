@@ -8,7 +8,7 @@ export function Intro() {
   const { handleNextQuestionNumUpdate } = useSharedStates();
 
   return (
-    <Section className="w-[336px] 2xs:w-[366px] xs:w-[23.75rem] sm:w-3xl bg-secondary-background gap-3 sm:gap-4 m-auto">
+    <Section className="w-[336px] 2xs:w-[366px] xs:w-[23.75rem] sm:w-2xl lg:w-3xl bg-secondary-background gap-3 sm:gap-4 m-auto">
       <Section.Sub className="gap-3">
         <Image src="/logo.png" alt="logo" width={80} height={90} />
 
