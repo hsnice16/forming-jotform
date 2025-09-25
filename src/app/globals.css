@@ -40,6 +40,7 @@
   /*
   * custom-breakpoints
   */
+  --breakpoint-2xs: 390px;
   --breakpoint-xs: 416px;
 
   /*
