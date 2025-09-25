@@ -9,7 +9,10 @@
   --dark-background: #121e5e;
   --secondary-background: #111e5f;
 
+  --error: #dc2626;
+
   --primary: #ff3980;
+  --primary-dark: #e53373;
 
   --text: #ffffff;
   --text-gray: #7a7575;
@@ -25,7 +28,10 @@
   --color-secondary-background: var(--secondary-background);
   --color-dark-background: var(--dark-background);
 
+  --color-error: var(--error);
+
   --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
 
   --color-text: var(--text);
   --color-text-gray: var(--text-gray);

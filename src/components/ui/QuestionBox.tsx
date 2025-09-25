@@ -23,7 +23,7 @@ export function QuestionBox({
   return (
     <div
       className={clsx(
-        "flex h-screen w-screen",
+        "flex flex-col items-center justify-center gap-3 h-screen w-screen",
         {
           "move-in": inView,
           "move-out": outView,
@@ -37,6 +37,11 @@ export function QuestionBox({
       )}
     >
       {children}
+
+      {/* Handles Error */}
+      {/* <div className="mx-3 min-w-[23.75rem] sm:min-w-[52rem] sm:max-w-[52rem] bg-error text-text rounded text-base sm:text-lg font-semibold text-center py-2">
+        There are errors on the form. Please fix them before continuing.
+      </div> */}
     </div>
   );
 }
