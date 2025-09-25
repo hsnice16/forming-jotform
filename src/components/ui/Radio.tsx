@@ -1,8 +1,8 @@
 import clsx from "clsx";
 
 type RadioProps = {
-  text: string;
-  isSelected?: boolean;
+  readonly text: string;
+  readonly isSelected?: boolean;
 };
 
 export function Radio({ isSelected, text }: RadioProps) {

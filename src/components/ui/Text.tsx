@@ -1,8 +1,8 @@
 import clsx from "clsx";
 
 type TextProps = {
-  text: string;
-  className?: string;
+  readonly text: string;
+  readonly className?: string;
 };
 
 export function Text({ text, className }: TextProps) {

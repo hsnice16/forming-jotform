@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 import { Sub } from "@/components/ui";
 
 type SectionProps = {
-  className?: string;
-  children: ReactNode;
+  readonly className?: string;
+  readonly children: ReactNode;
 };
 
 export function Section({ children, className }: SectionProps) {

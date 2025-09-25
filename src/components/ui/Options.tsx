@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 import { Checkbox, Option, Radio } from "@/components/ui";
 
 type OptionsProps = {
-  className?: string;
-  children: ReactNode;
+  readonly className?: string;
+  readonly children: ReactNode;
 };
 
 export function Options({ children, className }: OptionsProps) {

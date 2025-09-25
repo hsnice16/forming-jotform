@@ -3,9 +3,3 @@ export const questionsInitialState = {
   singleChoice: "",
   multipleChoices: [],
 };
-
-export type QuestionsStateType = {
-  name: string;
-  singleChoice: string;
-  multipleChoices: string[];
-};

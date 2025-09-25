@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { ReactNode } from "react";
 
 type SubProps = {
-  className?: string;
-  children: ReactNode;
+  readonly className?: string;
+  readonly children: ReactNode;
 };
 
 export function Sub({ children, className }: SubProps) {

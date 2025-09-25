@@ -1,11 +1,10 @@
 import {
   SET_NAME,
   SET_SINGLE_CHOICE,
-  QuestionsStateType,
-  QuestionsActionsType,
   SET_MULTIPLE_CHOICES,
   REMOVE_MULTIPLE_CHOICE,
-} from "../index";
+} from "@/reducers";
+import { QuestionsActionsType, QuestionsStateType } from "@/types";
 
 export function questionsReducerFunc(
   state: QuestionsStateType,

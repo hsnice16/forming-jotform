@@ -3,10 +3,11 @@
 import Image from "next/image";
 
 import { Intro, MultipleChoices, Name, SingleChoice } from "@/components";
+import { Question } from "@/components/ui";
 import { useSharedStates } from "@/contexts";
 import { useHandleKeydown } from "@/hooks";
 
-export default function Home() {
+export default function Page() {
   const { questionNum } = useSharedStates();
   const { now, prev } = questionNum;
 
@@ -20,22 +21,50 @@ export default function Home() {
           width={90}
           height={90}
           src="/logo.png"
-          className="hidden sm:block absolute top-14 left-26"
+          className="hidden sm:block absolute top-14 left-26 animate-scale"
         />
       )}
-
       {prev === null && now === 0 ? <Intro /> : null}
 
       {[0, 2].includes(prev ?? -1) && [now - 1, now, now + 1].includes(1) ? (
-        <Name />
+        <>
+          {now === 1 && prev !== 2 ? (
+            <Question sectionClassName="!bg-transparent !h-[800px] !max-h-[800px] !w-[1200px] !max-w-[1200px] absolute left-1/2 top-1/2 -translate-1/2 pointer-events-none before:pointer-events-none before:absolute before:w-[300px] before:h-[200px] before:animate-scale-fade before:block before:bg-secondary-background">
+              <span />
+            </Question>
+          ) : null}
+
+          <Question.Box
+            inView={now === 1}
+            inViewMove={prev === 2 ? "left" : "up"}
+            outView={[now - 1, now + 1].includes(1)}
+            outViewMove={now - 1 === 1 ? "left" : "right"}
+          >
+            <Name />
+          </Question.Box>
+        </>
       ) : null}
 
       {[1, 3].includes(prev ?? 0) && [now - 1, now, now + 1].includes(2) ? (
-        <SingleChoice />
+        <Question.Box
+          inView={now === 2}
+          outView={[now - 1, now + 1].includes(2)}
+          inViewMove={prev === 3 ? "left" : "right"}
+          outViewMove={now - 1 === 2 ? "left" : "right"}
+        >
+          <SingleChoice />
+        </Question.Box>
       ) : null}
 
       {prev === 2 && [now - 1, now, now + 1].includes(3) ? (
-        <MultipleChoices />
+        <Question.Box
+          inView={now === 3}
+          inViewMove={"right"}
+          outView={[now - 1, now + 1].includes(3)}
+          outViewMove={now - 1 === 3 ? "left" : "right"}
+        >
+          <MultipleChoices />
+        </Question.Box>
       ) : null}
     </main>
   );

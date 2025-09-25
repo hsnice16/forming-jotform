@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
 
-import { Box, LeftIcon, RightIcon, Text } from "@/components/ui";
+import { ButtonBox, LeftIcon, RightIcon, Text } from "@/components/ui";
 
 type ButtonProps = {
-  className?: string;
-  children: ReactNode;
-  onClick?: () => void;
+  readonly className?: string;
+  readonly children: ReactNode;
+  readonly onClick?: () => void;
 };
 
 export function Button({ children, className, onClick }: ButtonProps) {
@@ -23,7 +23,7 @@ export function Button({ children, className, onClick }: ButtonProps) {
   );
 }
 
-Button.Box = Box;
 Button.Text = Text;
+Button.Box = ButtonBox;
 Button.LeftIcon = LeftIcon;
 Button.RightIcon = RightIcon;

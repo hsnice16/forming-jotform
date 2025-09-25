@@ -1,15 +1,15 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
 
-import { Section, Button } from "@/components/ui";
+import { Section, Button, QuestionBox } from "@/components/ui";
 import { useSharedStates } from "@/contexts";
 
 type QuestionProps = {
-  children: ReactNode;
-  showNextBtn?: boolean;
-  showPreviousBtn?: boolean;
-  sectionClassName?: string;
-  subSectionClassName?: string;
+  readonly children: ReactNode;
+  readonly showNextBtn?: boolean;
+  readonly showPreviousBtn?: boolean;
+  readonly sectionClassName?: string;
+  readonly subSectionClassName?: string;
 };
 
 export function Question({
@@ -56,3 +56,5 @@ export function Question({
     </Section>
   );
 }
+
+Question.Box = QuestionBox;

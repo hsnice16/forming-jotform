@@ -30,12 +30,164 @@
   --color-text: var(--text);
   --color-text-gray: var(--text-gray);
   --color-light-text: var(--light-text);
+
+  /**** animate-scale-fade-animation ****/
+
+  --animate-scale-fade: scale-fade 0.3s ease-out 1 forwards;
+
+  @keyframes scale-fade {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale(4);
+    }
+  }
+
+  /**** animate-scale-animation ****/
+
+  --animate-scale: scale 0.3s linear 1 forwards;
+
+  @keyframes scale {
+    from {
+      transform: scale(0);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /**** animate-twinkle-animation ****/
+
+  --animate-twinkle: twinkle 0.3s linear 2;
+
+  @keyframes twinkle {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 @layer base {
   .input-box-shadow:focus {
     box-shadow: 0 0 0 2px var(--input-shadow);
   }
+
+  /**** animation ****/
+
+  .move-in,
+  .move-out {
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  /**** move-in-animation ****/
+
+  .move-in {
+    animation-timing-function: ease-out;
+  }
+
+  .move-in-left {
+    animation-name: in-left;
+  }
+
+  @keyframes in-left {
+    from {
+      transform: translateX(-100vw);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .move-in-right {
+    animation-name: in-right;
+  }
+
+  @keyframes in-right {
+    from {
+      transform: translateX(100vw);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .move-in-up {
+    animation-name: in-up;
+  }
+
+  @keyframes in-up {
+    from {
+      transform: translateY(25vh);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /**** move-out-animation ****/
+
+  .move-out {
+    animation-timing-function: linear;
+    pointer-events: none;
+  }
+
+  .move-out-left {
+    animation-name: out-left;
+  }
+
+  @keyframes out-left {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    25% {
+      opacity: 0;
+    }
+
+    to {
+      width: 0;
+      opacity: 0;
+      transform: translateX(-100vw);
+    }
+  }
+
+  .move-out-right {
+    animation-name: out-right;
+  }
+
+  @keyframes out-right {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    25% {
+      opacity: 0;
+    }
+
+    to {
+      width: 0;
+      opacity: 0;
+      transform: translateX(100vw);
+    }
+  }
+
+  /**** right-move-animation ****/
 
   .right-arrow-container:hover img {
     animation: right-move 1s 1;
@@ -56,20 +208,6 @@
 
     100% {
       transform: translateX(0);
-    }
-  }
-
-  .animate-twinkle {
-    animation: twinkle 0.3s linear 2;
-  }
-
-  @keyframes twinkle {
-    from {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
     }
   }
 }

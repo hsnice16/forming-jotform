@@ -1,4 +1,4 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, useEffect, useRef } from "react";
 
 import { Question } from "@/components/ui";
 import { useQuestions } from "@/contexts";
@@ -6,6 +6,17 @@ import { SET_NAME } from "@/reducers";
 
 export function Name() {
   const { state, dispatch } = useQuestions();
+  const inputTextRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      inputTextRef.current?.focus();
+    }, 350);
+
+    return function clean() {
+      clearTimeout(timerId);
+    };
+  }, []);
 
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     dispatch({ type: SET_NAME, payload: event.target.value });
@@ -20,9 +31,10 @@ export function Name() {
 
       <input
         type="text"
+        ref={inputTextRef}
         value={state.name}
         onChange={handleInputChange}
-        className="border border-text-gray mt-5 w-full rounded text-sm sm:text-lg py-2 px-4 outline-none focus:border-input-border input-box-shadow"
+        className="border border-text-gray mt-5 w-full rounded text-sm sm:text-lg py-2 px-4 outline-none transition focus:border-input-border input-box-shadow"
       />
     </Question>
   );

@@ -1,8 +1,8 @@
 import clsx from "clsx";
 
 type CheckboxProps = {
-  text: string;
-  isSelected?: boolean;
+  readonly text: string;
+  readonly isSelected?: boolean;
 };
 
 export function Checkbox({ isSelected, text }: CheckboxProps) {

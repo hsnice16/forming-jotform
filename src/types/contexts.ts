@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { QuestionsActionsType, QuestionsStateType } from "@/reducers";
+import { QuestionsActionsType, QuestionsStateType } from "@/types";
 
 /**
  * questions-context
