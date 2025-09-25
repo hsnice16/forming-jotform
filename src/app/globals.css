@@ -37,8 +37,15 @@
   --color-text-gray: var(--text-gray);
   --color-light-text: var(--light-text);
 
-  /**** animate-scale-fade-animation ****/
+  /*
+  * custom-breakpoints
+  */
+  --breakpoint-2xs: 370px;
+  --breakpoint-xs: 416px;
 
+  /*
+  * animate-scale-fade-animation
+  */
   --animate-scale-fade: scale-fade 0.3s ease-out 1 forwards;
 
   @keyframes scale-fade {
@@ -53,8 +60,9 @@
     }
   }
 
-  /**** animate-scale-animation ****/
-
+  /*
+  * animate-scale-animation
+  */
   --animate-scale: scale 0.3s linear 1 forwards;
 
   @keyframes scale {
@@ -67,8 +75,9 @@
     }
   }
 
-  /**** animate-twinkle-animation ****/
-
+  /*
+  * animate-twinkle-animation
+  */
   --animate-twinkle: twinkle 0.3s linear 2;
 
   @keyframes twinkle {
@@ -87,8 +96,9 @@
     box-shadow: 0 0 0 2px var(--input-shadow);
   }
 
-  /**** animation ****/
-
+  /*
+  * animation
+  */
   .move-in,
   .move-out {
     animation-duration: 0.3s;
@@ -96,8 +106,9 @@
     animation-fill-mode: forwards;
   }
 
-  /**** move-in-animation ****/
-
+  /*
+  * move-in-animation
+  */
   .move-in {
     animation-timing-function: ease-out;
   }
@@ -144,8 +155,9 @@
     }
   }
 
-  /**** move-out-animation ****/
-
+  /*
+  * move-out-animation
+  */
   .move-out {
     animation-timing-function: linear;
     pointer-events: none;
@@ -193,8 +205,9 @@
     }
   }
 
-  /**** right-move-animation ****/
-
+  /*
+  * right-move-animation
+  */
   .right-arrow-container:hover img {
     animation: right-move 1s 1;
   }
