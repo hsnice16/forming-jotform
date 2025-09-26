@@ -1,12 +1,19 @@
 import { useState } from "react";
 
-import { Options, Question } from "@/components/ui";
+import { Options } from "@/components/ui";
 import { useQuestions, useSharedStates } from "@/contexts";
 import { SET_SINGLE_CHOICE } from "@/reducers";
 
-export function SingleChoice() {
+type SingleChoiceOptionsProps = {
+  readonly optionsClassName?: string;
+};
+
+export function SingleChoiceOptions({
+  optionsClassName,
+}: SingleChoiceOptionsProps) {
   const { handleNextClick } = useSharedStates();
   const [selected, setSelected] = useState("");
+
   const { state, dispatch } = useQuestions();
   const { singleChoice } = state;
 
@@ -22,23 +29,9 @@ export function SingleChoice() {
   }
 
   return (
-    <Question
-      showNextBtn
-      showPreviousBtn
-      sectionClassName="mx-3"
-      subSectionClassName="gap-4 sm:gap-6"
-    >
-      <h2 className="sm:font-semibold sm:text-2xl">
-        This is single choice field
-      </h2>
-
-      <Options>
-        {[
-          "Type Option 1",
-          "Type Option 2",
-          "Type Option 3",
-          "Type Option 4",
-        ].map((option) => {
+    <Options className={optionsClassName}>
+      {["Type Option 1", "Type Option 2", "Type Option 3", "Type Option 4"].map(
+        (option) => {
           const isSelected = singleChoice === option;
           const selectedInView = selected === option;
 
@@ -52,8 +45,8 @@ export function SingleChoice() {
               <Options.Radio text={option} isSelected={isSelected} />
             </Options.Option>
           );
-        })}
-      </Options>
-    </Question>
+        }
+      )}
+    </Options>
   );
 }

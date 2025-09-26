@@ -20,6 +20,7 @@
   --text: #ffffff;
   --text-gray: #7a7575;
   --light-text: #b0bdff;
+  --text-slate-200: #e2e8f0;
 }
 
 @theme inline {
@@ -42,6 +43,7 @@
   --color-text: var(--text);
   --color-text-gray: var(--text-gray);
   --color-light-text: var(--light-text);
+  --color-text-slate-200: var(--text-slate-200);
 
   /*
   * custom-breakpoints

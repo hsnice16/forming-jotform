@@ -4,6 +4,7 @@ export { Checkbox } from "./Checkbox";
 export { DropdownOption } from "./DropdownOption";
 export { DropdownOptions } from "./DropdownOptions";
 export { LeftIcon } from "./LeftIcon";
+export { MobileButtons } from "./MobileButtons";
 export { Option } from "./Option";
 export { Options } from "./Options";
 export { Question } from "./Question";

@@ -1,10 +1,16 @@
 import { useState } from "react";
 
-import { Question, Options } from "@/components/ui";
+import { Options } from "@/components/ui";
 import { useQuestions } from "@/contexts";
 import { REMOVE_MULTIPLE_CHOICE, SET_MULTIPLE_CHOICES } from "@/reducers";
 
-export function MultipleChoices() {
+type MultipleChoiceOptionsProps = {
+  readonly optionsClassName?: string;
+};
+
+export function MultipleChoiceOptions({
+  optionsClassName,
+}: MultipleChoiceOptionsProps) {
   const [selected, setSelected] = useState("");
   const { state, dispatch } = useQuestions();
   const { multipleChoices } = state;
@@ -19,23 +25,9 @@ export function MultipleChoices() {
   }
 
   return (
-    <Question
-      showNextBtn
-      showPreviousBtn
-      sectionClassName="mx-3"
-      subSectionClassName="gap-4 sm:gap-6"
-    >
-      <h2 className="sm:font-semibold sm:text-2xl">
-        This is multi choice field
-      </h2>
-
-      <Options>
-        {[
-          "Type Option 1",
-          "Type Option 2",
-          "Type Option 3",
-          "Type Option 4",
-        ].map((option) => {
+    <Options className={optionsClassName}>
+      {["Type Option 1", "Type Option 2", "Type Option 3", "Type Option 4"].map(
+        (option) => {
           const selectedInView = selected === option;
           const isSelected = multipleChoices.includes(option);
 
@@ -49,8 +41,8 @@ export function MultipleChoices() {
               <Options.Checkbox text={option} isSelected={isSelected} />
             </Options.Option>
           );
-        })}
-      </Options>
-    </Question>
+        }
+      )}
+    </Options>
   );
 }
