@@ -1,8 +1,8 @@
 import {
+  // Name,
   Intro,
-  Name,
-  SingleChoice,
-  MultipleChoices,
+  // SingleChoice,
+  // MultipleChoices,
   DropdownInput,
 } from "@/components/mobile";
 import { useSharedStates } from "@/contexts";
