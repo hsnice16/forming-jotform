@@ -45,50 +45,52 @@ export function MobilePage() {
       ) : (
         <>
           <Section.Sub className="flex-1 relative">
-            {[1, 2].includes(now) ? (
-              <Question.MobileBox
-                inView={now === 1}
-                inViewMove={prev === 2 ? "left" : ""}
-                isAnimateScale={now === 1 && prev !== 2}
-                outView={[now - 1, now + 1].includes(1)}
-                outViewMove={now - 1 === 1 ? "left" : "right"}
-              >
-                <Name />
-              </Question.MobileBox>
-            ) : null}
+            <Question.MobileBox
+              questionNum={1}
+              inView={now === 1}
+              outView={now !== 1}
+              inViewMove={prev === 2 ? "left" : ""}
+              isAnimateScale={now === 1 && prev !== 2}
+              outViewMove={now > 1 ? "left" : "right"}
+            >
+              <Name />
+            </Question.MobileBox>
 
-            {[1, 2, 3].includes(now) ? (
-              <Question.MobileBox
-                inView={now === 2}
-                outView={[now - 1, now + 1].includes(2)}
-                inViewMove={prev === 3 ? "left" : "right"}
-                outViewMove={now - 1 === 2 ? "left" : "right"}
-              >
-                <SingleChoice />
-              </Question.MobileBox>
-            ) : null}
+            <Question.MobileBox
+              inView={now === 2}
+              outView={now !== 2}
+              isAnimateScale={now === 1 && prev !== 2}
+              outViewMove={now > 2 ? "left" : "right"}
+              inViewMove={prev === 3 ? "left" : "right"}
+            >
+              <SingleChoice />
+            </Question.MobileBox>
 
-            {[2, 3, 4].includes(now) ? (
-              <Question.MobileBox
-                inView={now === 3}
-                outView={[now - 1, now + 1].includes(3)}
-                inViewMove={prev === 4 ? "left" : "right"}
-                outViewMove={now - 1 === 3 ? "left" : "right"}
-              >
-                <MultipleChoices />
-              </Question.MobileBox>
-            ) : null}
+            <Question.MobileBox
+              inView={now === 3}
+              outView={now !== 3}
+              outViewMove={now > 3 ? "left" : "right"}
+              inViewMove={prev === 4 ? "left" : "right"}
+              isAnimateScale={
+                (now === 1 && prev !== 2) || (now === 2 && prev !== 3)
+              }
+            >
+              <MultipleChoices />
+            </Question.MobileBox>
 
-            {[3, 4].includes(now) ? (
-              <Question.MobileBox
-                inView={now === 4}
-                inViewMove={"right"}
-                outView={[now - 1, now + 1].includes(4)}
-                outViewMove={now - 1 === 4 ? "left" : "right"}
-              >
-                <DropdownInput />
-              </Question.MobileBox>
-            ) : null}
+            <Question.MobileBox
+              inView={now === 4}
+              outView={now !== 4}
+              inViewMove={"right"}
+              isAnimateScale={
+                (now === 1 && prev !== 2) ||
+                (now === 2 && prev !== 3) ||
+                (now === 3 && prev !== 4)
+              }
+              outViewMove={now > 4 ? "left" : "right"}
+            >
+              <DropdownInput />
+            </Question.MobileBox>
           </Section.Sub>
 
           <MobileButtons
