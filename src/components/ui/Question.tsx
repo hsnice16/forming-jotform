@@ -1,7 +1,12 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
 
-import { Section, Button, QuestionBox } from "@/components/ui";
+import {
+  Section,
+  Button,
+  QuestionBox,
+  QuestionMobileBox,
+} from "@/components/ui";
 import { useSharedStates } from "@/contexts";
 
 type QuestionProps = {
@@ -71,3 +76,4 @@ export function Question({
 }
 
 Question.Box = QuestionBox;
+Question.MobileBox = QuestionMobileBox;

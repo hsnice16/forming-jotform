@@ -1,28 +1,18 @@
 "use client";
 
 import clsx from "clsx";
-import { ChangeEventHandler, useEffect, useRef } from "react";
+import { ChangeEventHandler, RefObject } from "react";
 
 import { useQuestions } from "@/contexts";
 import { SET_NAME } from "@/reducers";
 
 type NameInputProps = {
   readonly className?: string;
+  inputTextRef?: RefObject<HTMLInputElement | null>;
 };
 
-export function NameInput({ className }: NameInputProps) {
-  const inputTextRef = useRef<HTMLInputElement>(null);
+export function NameInput({ className, inputTextRef }: NameInputProps) {
   const { state, dispatch } = useQuestions();
-
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      inputTextRef.current?.focus();
-    }, 350);
-
-    return function clean() {
-      clearTimeout(timerId);
-    };
-  }, []);
 
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     dispatch({ type: SET_NAME, payload: event.target.value });

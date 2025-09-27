@@ -135,6 +135,27 @@
     }
   }
 
+  .move-in-left-mobile {
+    animation-name: in-left-mobile;
+  }
+
+  @keyframes in-left-mobile {
+    from {
+      top: 3rem;
+      bottom: 3rem;
+      right: -0.75rem;
+      transform: translateX(-100vw);
+    }
+
+    to {
+      left: 1.5rem;
+      top: 1.25rem;
+      right: 1.5rem;
+      bottom: 1.25rem;
+      transform: translateX(0);
+    }
+  }
+
   .move-in-right {
     animation-name: in-right;
   }
@@ -145,6 +166,27 @@
     }
 
     to {
+      transform: translateX(0);
+    }
+  }
+
+  .move-in-right-mobile {
+    animation-name: in-right-mobile;
+  }
+
+  @keyframes in-right-mobile {
+    from {
+      top: 3rem;
+      bottom: 3rem;
+      left: -0.75rem;
+      transform: translateX(100vw);
+    }
+
+    to {
+      left: 1.5rem;
+      top: 1.25rem;
+      right: 1.5rem;
+      bottom: 1.25rem;
       transform: translateX(0);
     }
   }
@@ -192,6 +234,27 @@
     }
   }
 
+  .move-out-left-mobile {
+    animation-name: out-left-mobile;
+  }
+
+  @keyframes out-left-mobile {
+    from {
+      left: 1.5rem;
+      top: 1.25rem;
+      right: 1.5rem;
+      bottom: 1.25rem;
+      transform: translateX(0);
+    }
+
+    to {
+      top: 3rem;
+      bottom: 3rem;
+      right: -0.75rem;
+      transform: translateX(-100vw);
+    }
+  }
+
   .move-out-right {
     animation-name: out-right;
   }
@@ -209,6 +272,27 @@
     to {
       width: 0;
       opacity: 0;
+      transform: translateX(100vw);
+    }
+  }
+
+  .move-out-right-mobile {
+    animation-name: out-right-mobile;
+  }
+
+  @keyframes out-right-mobile {
+    from {
+      top: 1.25rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      transform: translateX(0);
+    }
+
+    to {
+      top: 3rem;
+      bottom: 3rem;
+      left: -0.75rem;
       transform: translateX(100vw);
     }
   }

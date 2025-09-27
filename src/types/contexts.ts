@@ -21,6 +21,6 @@ export type SharedStatesContextType = {
   readonly handleNextClick: () => void;
   readonly handlePreviousClick: () => void;
   readonly handleNextQuestionNumUpdate: () => void;
-  readonly handlePreviousQuestionsNumUpdate: () => void;
+  readonly handlePreviousQuestionNumUpdate: () => void;
   readonly setQuestionNum: Dispatch<SetStateAction<QuestionNumType>>;
 };

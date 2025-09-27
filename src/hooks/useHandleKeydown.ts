@@ -9,7 +9,7 @@ export function useHandleKeydown() {
   const {
     questionNum,
     handleNextQuestionNumUpdate,
-    handlePreviousQuestionsNumUpdate,
+    handlePreviousQuestionNumUpdate,
   } = useSharedStates();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export function useHandleKeydown() {
           return;
         }
 
-        handlePreviousQuestionsNumUpdate();
+        handlePreviousQuestionNumUpdate();
         return;
       }
 

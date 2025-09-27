@@ -9,6 +9,7 @@ export { Option } from "./Option";
 export { Options } from "./Options";
 export { Question } from "./Question";
 export { QuestionBox } from "./QuestionBox";
+export { QuestionMobileBox } from "./QuestionMobileBox";
 export { Radio } from "./Radio";
 export { RightIcon } from "./RightIcon";
 export { Section } from "./Section";

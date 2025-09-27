@@ -11,7 +11,7 @@ const SharedStatesContext = createContext<SharedStatesContextType>({
   handlePreviousClick: () => {},
   questionNum: { prev: null, now: 0 },
   handleNextQuestionNumUpdate: () => {},
-  handlePreviousQuestionsNumUpdate: () => {},
+  handlePreviousQuestionNumUpdate: () => {},
 });
 
 type SharedStatesProviderType = {
@@ -32,7 +32,7 @@ export function SharedStatesProvider({ children }: SharedStatesProviderType) {
     );
   }
 
-  function handlePreviousQuestionsNumUpdate() {
+  function handlePreviousQuestionNumUpdate() {
     setQuestionNum((prevValue) =>
       prevValue.now - 1 <= 0
         ? { ...prevValue }
@@ -41,19 +41,11 @@ export function SharedStatesProvider({ children }: SharedStatesProviderType) {
   }
 
   function handleNextClick() {
-    document.dispatchEvent(
-      new KeyboardEvent("keydown", {
-        key: "ArrowRight",
-      })
-    );
+    handleNextQuestionNumUpdate();
   }
 
   function handlePreviousClick() {
-    document.dispatchEvent(
-      new KeyboardEvent("keydown", {
-        key: "ArrowLeft",
-      })
-    );
+    handlePreviousQuestionNumUpdate();
   }
 
   const value = {
@@ -62,7 +54,7 @@ export function SharedStatesProvider({ children }: SharedStatesProviderType) {
     handleNextClick,
     handlePreviousClick,
     handleNextQuestionNumUpdate,
-    handlePreviousQuestionsNumUpdate,
+    handlePreviousQuestionNumUpdate,
   };
 
   return (
