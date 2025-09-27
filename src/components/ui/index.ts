@@ -13,5 +13,6 @@ export { QuestionMobileBox } from "./QuestionMobileBox";
 export { Radio } from "./Radio";
 export { RightIcon } from "./RightIcon";
 export { Section } from "./Section";
+export { Steps } from "./Steps";
 export { Sub } from "./Sub";
 export { Text } from "./Text";

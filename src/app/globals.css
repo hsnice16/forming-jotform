@@ -10,6 +10,7 @@
 
   --body-background: #283f97;
   --dark-background: #121e5e;
+  --dark-background-100: #111d58;
   --secondary-background: #111e5f;
 
   --error: #dc2626;
@@ -21,6 +22,9 @@
   --text-gray: #7a7575;
   --light-text: #b0bdff;
   --text-slate-200: #e2e8f0;
+
+  --step-circle-gray: #a1a6c1;
+  --step-line-gray: #5c6595;
 }
 
 @theme inline {
@@ -34,6 +38,7 @@
   --color-body-background: var(--body-background);
   --color-secondary-background: var(--secondary-background);
   --color-dark-background: var(--dark-background);
+  --color-dark-background-100: var(--dark-background-100);
 
   --color-error: var(--error);
 
@@ -44,6 +49,9 @@
   --color-text-gray: var(--text-gray);
   --color-light-text: var(--light-text);
   --color-text-slate-200: var(--text-slate-200);
+
+  --color-step-circle-gray: var(--step-circle-gray);
+  --color-step-line-gray: var(--step-line-gray);
 
   /*
   * custom-breakpoints
@@ -80,6 +88,40 @@
 
     to {
       transform: scale(1);
+    }
+  }
+
+  /*
+  * animate-scale-opacity-animation
+  */
+  --animate-scale-opacity: scale-opacity 0.3s linear 0.3s 1 forwards;
+
+  @keyframes scale-opacity {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /*
+  * animate-stretch-right-animation
+  */
+  --animate-stretch-right: stretch-right 0.3s linear 0.3s 1 forwards;
+
+  @keyframes stretch-right {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+      width: 100%;
     }
   }
 

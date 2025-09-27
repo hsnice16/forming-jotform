@@ -10,7 +10,7 @@ import {
   MultipleChoices,
 } from "@/components/desktop";
 
-import { Question } from "@/components/ui";
+import { Question, Steps } from "@/components/ui";
 import { useSharedStates } from "@/contexts";
 import { useHandleKeydown } from "@/hooks";
 
@@ -84,6 +84,8 @@ export function DesktopPage() {
           <DropdownInput />
         </Question.Box>
       ) : null}
+
+      <Steps />
     </main>
   );
 }
