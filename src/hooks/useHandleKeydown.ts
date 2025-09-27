@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 
-import { useSharedStates } from "@/contexts";
 import { TOTAL_QUESTIONS } from "@/constants";
+import { useSharedStates } from "@/contexts";
 
 export function useHandleKeydown() {
   const {
@@ -49,5 +49,5 @@ export function useHandleKeydown() {
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [questionNum]);
+  }, [questionNum.now]);
 }

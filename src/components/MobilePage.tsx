@@ -1,5 +1,7 @@
 "use client";
 
+import { useMemo } from "react";
+
 import {
   Name,
   Intro,
@@ -10,11 +12,13 @@ import {
 
 import { MobileButtons, Question, Section } from "@/components/ui";
 import { useSharedStates } from "@/contexts";
-import { useMemo } from "react";
+import { useHandlePointer } from "@/hooks";
 
 export function MobilePage() {
   const { questionNum } = useSharedStates();
   const { now, prev } = questionNum;
+
+  useHandlePointer();
 
   const [showNextBtn, showPreviousBtn, showQuestionSteps, showSubmitBtn] =
     useMemo(() => {
