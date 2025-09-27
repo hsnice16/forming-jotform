@@ -38,6 +38,12 @@ npm run dev
 
 ---
 
+## 👀 How it looks
+
+![Demo](./public/demo.gif)
+
+---
+
 ## 💚 GitHub Sponsor
 
 If you found this project helpful and want to help the author, then you can sponsor him - [GitHub Sponsor](https://github.com/sponsors/hsnice16)
